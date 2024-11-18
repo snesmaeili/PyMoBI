@@ -1,41 +1,49 @@
-PyMoBI: Python Mobile Brain Imaging Analysis
+# PyMoBI: Python Mobile Brain Imaging Analysis
+
 PyMoBI is a Python library designed for processing and analyzing mobile EEG (electroencephalography) data, with specialized support for motion-integrated brain imaging research. Built on top of MNE-Python, PyMoBI provides additional tools specifically designed for mobile brain imaging scenarios, overcoming limitations of existing tools and expanding capabilities to cover a variety of mobile tasks beyond gait analysis.
 
-Table of Contents
-Features
-Installation
-Quick Start
-Documentation
-Project Structure
-Contributing
-License
-Contact
-Features
-Seamless Integration with MNE-Python: Utilize the powerful functionalities of MNE for EEG data handling.
-Flexible Processing Pipeline: Customize the order of processing steps using object-oriented programming and class-based methods.
-Motion Data Integration: Incorporate motion analysis using libraries like KielMAT or Python equivalents, enabling synchronization of EEG and motion data.
-Advanced Artifact Detection and Removal: Implement methods like Zapline+ for line noise removal, ASR for artifact subspace reconstruction, and AMICA for advanced ICA decomposition.
-Extensible and Modular Design: Easily add new processing methods and customize existing ones to fit your research needs.
-Visualization Tools: Provide flexible visualization options for EEG and motion data.
-Processing History Tracking: Maintain a detailed log of all processing steps for reproducibility.
-Installation
+## Table of Contents
+
+- [Features](#features)
+- [Installation](#installation)
+- [Quick Start](#quick-start)
+- [Documentation](#documentation)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+
+## Features
+
+- **Seamless Integration with MNE-Python**: Utilize the powerful functionalities of MNE for EEG data handling.
+- **Flexible Processing Pipeline**: Customize the order of processing steps using object-oriented programming and class-based methods.
+- **Motion Data Integration**: Incorporate motion analysis using libraries like KielMAT or Python equivalents, enabling synchronization of EEG and motion data.
+- **Advanced Artifact Detection and Removal**: Implement methods like Zapline+ for line noise removal, ASR for artifact subspace reconstruction, and AMICA for advanced ICA decomposition.
+- **Extensible and Modular Design**: Easily add new processing methods and customize existing ones to fit your research needs.
+- **Visualization Tools**: Provide flexible visualization options for EEG and motion data.
+- **Processing History Tracking**: Maintain a detailed log of all processing steps for reproducibility.
+
+## Installation
+
 Clone the repository and install the required dependencies:
 
-bash
-Copy code
+```bash
 git clone https://github.com/yourusername/PyMoBI.git
 cd PyMoBI
 pip install -r requirements.txt
+```
+
 Alternatively, you can install PyMoBI via pip (once it's available on PyPI):
 
-bash
-Copy code
+```bash
 pip install pymobi
-Quick Start
+```
+
+## Quick Start
+
 Here's a basic example of how to use PyMoBI:
 
-python
-Copy code
+```python
 import mne
 from pymobi.core.data import PyMoBIData
 from pymobi.core.config import PyMoBIConfig
@@ -83,12 +91,15 @@ data.mne_raw.plot(n_channels=30, block=True)
 
 # Save the processed data
 data.mne_raw.save('processed_data.fif', overwrite=True)
-Documentation
-Comprehensive documentation is available in the docs/ directory or online at PyMoBI Documentation.
+```
 
-Project Structure
-bash
-Copy code
+## Documentation
+
+Comprehensive documentation is available in the `docs/` directory or online at [PyMoBI Documentation](#).
+
+## Project Structure
+
+```bash
 PyMoBI/
 ├── pymobi/
 │   ├── __init__.py
@@ -126,41 +137,48 @@ PyMoBI/
 ├── setup.py
 ├── requirements.txt
 └── .gitignore
-Contributing
+```
+
+## Contributing
+
 Contributions are welcome! Please follow these steps:
 
-Fork the repository on GitHub.
+1. Fork the repository on GitHub.
 
-Clone your fork:
+2. Clone your fork:
 
-bash
-Copy code
-git clone https://github.com/yourusername/PyMoBI.git
-Create a new branch:
+   ```bash
+   git clone https://github.com/yourusername/PyMoBI.git
+   ```
 
-bash
-Copy code
-git checkout -b feature/YourFeature
-Commit your changes:
+3. Create a new branch:
 
-bash
-Copy code
-git commit -am 'Add a feature'
-Push to the branch:
+   ```bash
+   git checkout -b feature/YourFeature
+   ```
 
-bash
-Copy code
-git push origin feature/YourFeature
-Create a new Pull Request on GitHub.
+4. Commit your changes:
 
-Please read the CONTRIBUTING.md file for detailed guidelines on how to contribute to the project.
+   ```bash
+   git commit -am 'Add a feature'
+   ```
 
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
+5. Push to the branch:
 
-Contact
-For questions or suggestions, please contact:
+   ```bash
+   git push origin feature/YourFeature
+   ```
 
-Your Name
-Email: your.email@example.com
-GitHub: yourusername
+6. Create a new Pull Request on GitHub.
+
+Please read the `CONTRIBUTING.md` file for detailed guidelines on how to contribute to the project.
+
+## License
+
+This project is licensed under the MIT License - see the `LICENSE` file for details.
+
+## Contact
+
+For questions or suggestions, please contact:\
+Email: [sina.esmeili@umontreal.ca](mailto\:sina.esmeili@umontreal.ca)
+
