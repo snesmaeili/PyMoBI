@@ -105,38 +105,28 @@ PyMoBI/
 │   ├── __init__.py
 │   ├── core/
 │   │   ├── __init__.py
-│   │   ├── data.py          # Data container classes
-│   │   └── config.py        # Configuration management
+│   │   ├── config.py          # Configuration management
+│   │   ├── data.py           # Data container
+│   │   ├── logger.py         # Logging system
+│   │   └── pipeline.py       # Pipeline orchestration
+│   ├── io/
+│   │   ├── __init__.py
+│   │   ├── readers.py        # Data readers (BIDS, XDF, etc.)
+│   │   └── writers.py        # BIDS export
 │   ├── preprocessing/
 │   │   ├── __init__.py
-│   │   ├── basic.py         # Basic MNE-based preprocessing
-│   │   ├── zapline.py       # Implementation of Zapline+
-│   │   ├── asr.py           # Implementation of ASR
-│   │   ├── amica.py         # Implementation of AMICA
-│   ├── motion/
+│   │   ├── basic.py          # Basic preprocessing
+│   │   ├── artifacts.py      # Artifact removal (ASR, etc.)
+│   │   └── ica.py           # ICA processing (AMICA, etc.)
+│   ├── analysis/
 │   │   ├── __init__.py
-│   │   ├── gait.py          # Gait event detection
-│   │   └── sync.py          # EEG-motion synchronization
+│   │   ├── spectral.py       # Spectral analysis
+│   │   └── connectivity.py   # Connectivity analysis
 │   └── viz/
 │       ├── __init__.py
-│       ├── eeg_viz.py       # EEG visualization tools
-│       └── motion_viz.py    # Motion data visualization
-├── examples/
-│   ├── basic_usage.py
-│   └── gait_analysis.py
-├── tests/
-│   ├── __init__.py
-│   ├── test_core.py
-│   ├── test_preprocessing.py
-│   └── test_motion.py
-├── docs/
-│   ├── index.md
-│   └── installation.md
-├── README.md
-├── LICENSE
-├── setup.py
-├── requirements.txt
-└── .gitignore
+│       ├── signals.py        # Signal visualization
+│       ├── topography.py     # Topographic plots
+│       └── reports.py        # Processing reports
 ```
 
 ## Contributing
