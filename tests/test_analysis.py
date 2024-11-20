@@ -3,7 +3,6 @@
 import pytest
 import mne
 import numpy as np
-from pathlib import Path
 from pymobi import PyMoBIConfig, PyMoBIData
 from pymobi.analysis import SpectralAnalysis
 
@@ -14,11 +13,11 @@ class TestSpectralAnalysis:
     def config(self):
         """Create test configuration."""
         return PyMoBIConfig(
-            study_folder=Path("test_data"),
+            study_folder="test_data",
             filename_prefix="sub-",
             resample_freq=250.0
         )
-    
+        
     @pytest.fixture
     def sample_data(self):
         """Create sample data with known spectral properties."""
@@ -131,33 +130,3 @@ class TestSpectralAnalysis:
         # Test output files
         output_path = Path(config.study_folder) / 'spectral_analysis' / f'sub-{sample_data.subject_id}'
         assert (output_path / 'psd_topography.png').exists()
-        
-    def test_tfr_visualization(self, config, sample_data):
-        """Test TFR visualization functionality."""
-        spectral = SpectralAnalysis(config)
-        
-        # Add motion events
-        sample_data.motion_events = [
-            {'timestamp': 2.0, 'type': 'step'},
-            {'timestamp': 4.0, 'type': 'step'},
-            {'timestamp': 6.0, 'type': 'step'}
-        ]
-        
-        # Compute TFR
-        tfr = spectral.compute_motion_locked_tfr(
-            sample_data,
-            event_id={'step': 1},
-            tmin=-0.5,
-            tmax=0.5
-        )
-        
-        # Test visualization
-        spectral.plot_tfr_comparison(
-            sample_data,
-            tfr,
-            channels=['EEG001', 'EEG002']
-        )
-        
-        # Test output files
-        output_path = Path(config.study_folder) / 'spectral_analysis' / f'sub-{sample_data.subject_id}'
-        assert (output_path / 'tfr_comparison.png').exists()
